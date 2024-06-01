@@ -11,11 +11,12 @@ import SignupPage from "./features/pages/SignupPage";
 import Cart from "./features/cart/Cart";
 import CartPage from "./features/pages/CartPage";
 import Checkout from "./features/pages/Checkout";
+import ProductDetails from "./features/productList/components/ProductDetails";
 
 const router = createBrowserRouter([
   {
-   path:"/login",
-   element:<LoginPage></LoginPage>,
+    path: "/login",
+    element: <LoginPage></LoginPage>,
   },
   {
     path: "/",
@@ -26,13 +27,17 @@ const router = createBrowserRouter([
     element: <SignupPage></SignupPage>,
   },
   {
-    path:'/cart',
-    element:<CartPage></CartPage>
+    path: "/cart",
+    element: <CartPage></CartPage>,
   },
   {
-    path:'/checkout',
-    element:<Checkout></Checkout>
-  }
+    path: "/checkout",
+    element: <Checkout></Checkout>,
+  },
+  {
+    path: "/product-details",
+    element: <ProductDetails></ProductDetails>,
+  },
 ]);
 
 function App() {
