@@ -1,0 +1,105 @@
+{
+  "main": {
+    "name": "Kamal",
+    "description": "Full Stack React Developer by Day && Student by Night. #Boss ",
+    "image": "https://drive.google.com/file/d/1T12DpkzmYpda8RX363NSPL9HrcXTxSJG/view?usp=drive_link",
+    "bio": "My Name is Kamal, I'm a Full Stack Developer",
+    "contactmessage": "Get in touch with me to receive further details, get coached or anything else.",
+    "email": "kamalsethi018@gmail.com",
+    "phone": "+91 6280-795250",
+    "address": {
+      "city": "Rajpura",
+      "state": "Punjab"
+    },
+    "resumedownload": "https://drive.google.com/file/d/13CaR3z5_Q5zIAef-X0ha0g8na3Ogm1FB/view?usp=drive_link",
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/kamal-sethi-4ab879232/",
+        "className": "fa fa-linkedin"
+      },
+
+      {
+        "name": "github",
+        "url": "https://github.com/kamal-sethi",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "Here you can create a short write-up of your skills to show off to employers",
+    "education": [
+      {
+        "school": "Swami Vivekanand Institute of Education and Technology",
+        "degree": "Masters in Computer Application",
+        "graduation time period": "2023-2025",
+        "description": "8 CGPA(till now) "
+      },
+      {
+        "school": "Chitkara University",
+        "degree": "Bachelors in Computer Application",
+        "graduation time period": "2020-2023",
+        "description": "9 CGPA "
+      }
+    ],
+
+    "skills": [
+      {
+        "name": "ReactJS",
+        "level": "90%"
+      },
+      {
+        "name": "NodeJS",
+        "level": "90%"
+      },
+      {
+        "name": "HTML5",
+        "level": "90%"
+      },
+      {
+        "name": "CSS3",
+        "level": "75%"
+      },
+      {
+        "name": "MongoDB",
+        "level": "75%"
+      },
+      {
+        "name": "MySQL",
+        "level": "80%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "80%"
+      },
+      {
+        "name": "Git",
+        "level": "80%"
+      },
+      {
+        "name": "C++",
+        "level": "70%"
+      }
+
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "MERN Stack Ecommerce Website",
+        "category": "Ecommerce website built with MERN (MongoDB, ExpressJS, ReactJS, NodeJS,Redux)",
+        "url": "https://github.com/kamal-sethi/react-ecommerce"
+      },
+      {
+        "title": "Blog App",
+        "category": "Blog app (ReactJS, ExpressJS, NodeJS,MongoDB)",
+        
+      },
+      {
+        "title": "URL-Shortner",
+        "category": "URL shortner (MongoDB, ExpressJS, ReactJS, NodeJS)",
+        "url": "https://github.com/kamal-sethi/url-shortner"
+      }
+    ]
+  }
+}
