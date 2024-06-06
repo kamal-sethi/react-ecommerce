@@ -11,7 +11,9 @@ export const fetchAllProductsAsync = createAsyncThunk(
   async () => {
     const response = await fetchAllProducts();
     // The value we return becomes the `fulfilled` action payload
+    console.log(response.data)
     return response.data;
+  
   }
 );
 
@@ -32,7 +34,8 @@ export const productSlice = createSlice({
       })
       .addCase(fetchAllProductsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.products += action.payload;
+        state.products = action.payload;
+        console.log(state.products.length)
       });
   },
 });
