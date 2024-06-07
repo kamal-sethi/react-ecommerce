@@ -59,6 +59,7 @@ export const productSlice = createSlice({
 
 export const { increment } = productSlice.actions;
 
+//selecting all products
 export const selectAllProducts = (state) => state.product.products;
 
 
