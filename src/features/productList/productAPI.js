@@ -8,3 +8,20 @@ export function fetchAllProducts() {
     resolve({ data });
   });
 }
+
+export function fetchProductsByFilters(filter) {
+  //filter={"category":"smartphones"}
+  let queryString = "";
+  for (let key in filter) {
+    queryString += `${key}=${filter[key]}&`;
+  }
+  console.log(queryString);
+  return new Promise(async (resolve) => {
+    const response = await fetch(
+      "http://localhost:8080/products?"+queryString
+    );
+    console.log(response)
+    const data = await response.json();
+    resolve({ data });
+  });
+}

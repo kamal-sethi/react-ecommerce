@@ -34,7 +34,7 @@ const products = [
 ];
 
 export default function Cart() {
-  const count = useSelector(selectCount);
+  // const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
 
@@ -64,6 +64,7 @@ export default function Cart() {
                           <a href={product.href}>{product.name}</a>
                         </h3>
                         <p className="ml-4">{product.price}</p>
+                        {console.log(product.price)}
                       </div>
                       <p className="mt-1 text-sm text-gray-500">
                         {product.color}

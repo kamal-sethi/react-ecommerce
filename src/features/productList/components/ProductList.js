@@ -1,6 +1,10 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAllProductsAsync, selectAllProducts } from "../productSlice";
+import {
+  fetchAllProductsAsync,
+  fetchAllProductsByFilterAsync,
+  selectAllProducts,
+} from "../productSlice";
 
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon, StarIcon } from "@heroicons/react/24/outline";
@@ -23,7 +27,13 @@ export default function ProductList() {
   const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const products = useSelector(selectAllProducts);
-  console.log(products);
+  const [filter, setFilter] = useState({});
+
+  const handleFilter = (e, section, option) => {
+    const newFilter = { ...filter, [section.id]: option.value };
+    setFilter(newFilter);
+    dispatch(fetchAllProductsByFilterAsync(newFilter));
+  };
 
   useEffect(() => {
     dispatch(fetchAllProductsAsync());
@@ -121,6 +131,9 @@ export default function ProductList() {
                                         defaultValue={option.value}
                                         type="checkbox"
                                         defaultChecked={option.checked}
+                                        onChange={(e) =>
+                                          handleFilter(e, section, option)
+                                        }
                                         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                       />
                                       <label
@@ -265,6 +278,9 @@ export default function ProductList() {
                                     defaultValue={option.value}
                                     type="checkbox"
                                     defaultChecked={option.checked}
+                                    onChange={(e) =>
+                                      handleFilter(e, section, option)
+                                    }
                                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                   />
                                   <label
