@@ -15,29 +15,13 @@ export const subCategories = [
 ];
 export const filters = [
   {
-    id: "brand",
-    name: "brand",
-    options: [
-      { value: 'gucci', label: 'gucci', checked: false },
-      { value: 'chanel', label: 'chanel', checked: false },
-      { value: 'calvin klein', label: 'calvin klein', checked: false },
-      { value: 'dolce & gabbana', label: 'dolce & gabbana', checked: false },
-      { value: 'dior', label: 'dolce & dior', checked: false },
-      
-      { value: 'Annibale Colombo', label: 'Annibale Colombo', checked: false },
-      
-    ],
-  },
-  {
     id: "category",
     name: "Category",
     options: [
-      { value: 'beauty', label: 'beauty', checked: false },
-      { value: 'fragrances', label: 'fragrances', checked: false },
-      { value: 'furniture', label: 'furniture', checked: false },
-      { value: 'Groceries', label: 'Groceries', checked: false },
-
-      
+      { value: "beauty", label: "beauty", checked: false },
+      { value: "fragrances", label: "fragrances", checked: false },
+      { value: "furniture", label: "furniture", checked: false },
+      { value: "Groceries", label: "Groceries", checked: false },
     ],
   },
 ];
