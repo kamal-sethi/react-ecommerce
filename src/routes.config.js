@@ -1,9 +1,7 @@
 import LoginPage from "./features/pages/LoginPage";
 import SignupPage from "./features/pages/SignupPage";
-import Cart from "./features/cart/Cart";
 import CartPage from "./features/pages/CartPage";
 import Checkout from "./features/pages/Checkout";
-import ProductDetails from "./features/productList/components/ProductDetails";
 import ProductDetailPage from "./features/pages/ProductDetailPage";
 import Home from "./features/pages/Home";
 export const routes=[
