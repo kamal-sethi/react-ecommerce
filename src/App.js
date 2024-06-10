@@ -1,5 +1,4 @@
 import "./App.css";
-import Home from "./features/pages/Home";
 import {
   createBrowserRouter,
   RouterProvider,

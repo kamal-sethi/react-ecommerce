@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
-import { userNavigation,navigation,user} from "./helper";
+import { userNavigation, navigation, user } from "./helper";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -25,7 +25,7 @@ const Navbar = ({ children }) => {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <Link to='/'>
+                      <Link to="/">
                         <img
                           className="h-8 w-8"
                           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
@@ -209,8 +209,14 @@ const Navbar = ({ children }) => {
 
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+<<<<<<< HEAD
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 ">
             My Store <ShoppingCartIcon className="h-6 w-6 inline"/>
+=======
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+              My Store{" "}
+              <ShoppingCartIcon className="h-6 w-6 inline" aria-hidden="true" />
+>>>>>>> 44ebe28565782d548ef9678da5f6ca53a4cef960
             </h1>
           </div>
         </header>
