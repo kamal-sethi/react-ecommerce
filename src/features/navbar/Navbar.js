@@ -209,14 +209,8 @@ const Navbar = ({ children }) => {
 
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-<<<<<<< HEAD
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 ">
-            My Store <ShoppingCartIcon className="h-6 w-6 inline"/>
-=======
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              My Store{" "}
-              <ShoppingCartIcon className="h-6 w-6 inline" aria-hidden="true" />
->>>>>>> 44ebe28565782d548ef9678da5f6ca53a4cef960
+              My Store <ShoppingCartIcon className="h-6 w-6 inline" />
             </h1>
           </div>
         </header>
