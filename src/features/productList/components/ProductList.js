@@ -28,6 +28,7 @@ export default function ProductList() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const products = useSelector(selectAllProducts);
   const [filter, setFilter] = useState({});
+  const [sort,setSort]=useState({});
 
   const handleFilter = (e, section, option) => {
     const newFilter = { ...filter, [section.id]: option.value };
@@ -35,6 +36,13 @@ export default function ProductList() {
     dispatch(fetchAllProductsByFilterAsync(newFilter));
   };
 
+  const handleSorting = (e,option) => {
+    const newFilter = { ...filter, _sort: option.sort};
+
+    console.log(newFilter)
+    setFilter(newFilter);
+    dispatch(fetchAllProductsByFilterAsync(newFilter));
+  };
   useEffect(() => {
     dispatch(fetchAllProductsAsync());
   }, [dispatch]);
@@ -189,8 +197,8 @@ export default function ProductList() {
                         {sortOptions.map((option) => (
                           <Menu.Item key={option.name}>
                             {({ active }) => (
-                              <a
-                                href={option.href}
+                              <p
+                                onClick={e=>handleSorting(e,option)}
                                 className={classNames(
                                   option.current
                                     ? "font-medium text-gray-900"
@@ -200,7 +208,7 @@ export default function ProductList() {
                                 )}
                               >
                                 {option.name}
-                              </a>
+                              </p>
                             )}
                           </Menu.Item>
                         ))}
