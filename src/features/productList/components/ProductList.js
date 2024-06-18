@@ -18,6 +18,7 @@ import {
 import { Link } from "react-router-dom";
 import { sortOptions, subCategories, filters } from "./Helpers";
 import Pagination from "./Pagination";
+import { ITEMS_PER_PAGE } from "../../../app/constants";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -31,23 +32,45 @@ export default function ProductList() {
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const[page,setPage]=useState(1);
 
   const handleFilter = (e, section, option) => {
-    const newFilter = { ...filter, [section.id]: option.value };
+    console.log(e.target.checked);
+    const newFilter = { ...filter };
+
+   if(e.target.checked)
+    {
+      if(newFilter[section.id])
+        {
+          newFilter[section.id].push(option.value)
+        }
+        else{
+          newFilter[section.id]=[option.value];
+        }
+    }
+    else{
+      const index=[section.id].findIndex(el=>el===option.value);
+      newFilter[section.id].splice(index,1);
+    }
     setFilter(newFilter);
-    dispatch(fetchAllProductsByFilterAsync(newFilter));
   };
 
   const handleSorting = (e, option) => {
-    const newFilter = { ...filter, _sort: option.sort };
+    const newSort = { _sort: option.sort, _order: option.order };
 
-    console.log(newFilter);
-    setFilter(newFilter);
-    dispatch(fetchAllProductsByFilterAsync(newFilter));
+    setSort(newSort);
   };
+
+  const handlePagination=(page)=>
+  {
+   console.log(page);
+   setPage(page);
+  }
   useEffect(() => {
-    dispatch(fetchAllProductsAsync());
-  }, [dispatch]);
+    const pagination={_page:page,_per_page:ITEMS_PER_PAGE}
+    console.log(pagination)
+    dispatch(fetchAllProductsByFilterAsync({ filter, sort,pagination}));
+  }, [dispatch, filter, sort,page]);
 
   return (
     <div>
@@ -145,7 +168,7 @@ export default function ProductList() {
               </div>
             </section>
 
-            <Pagination />
+            <Pagination handlePagination={handlePagination} page={page} setPage={setPage} totalItems={30}  />
           </main>
         </div>
       </div>

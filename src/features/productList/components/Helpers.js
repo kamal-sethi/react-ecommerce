@@ -20,7 +20,7 @@ export const filters = [
       { value: "beauty", label: "beauty", checked: false },
       { value: "fragrances", label: "fragrances", checked: false },
       { value: "furniture", label: "furniture", checked: false },
-      { value: "Groceries", label: "Groceries", checked: false },
+      { value: "groceries", label: "groceries", checked: false },
     ],
   },
 ];

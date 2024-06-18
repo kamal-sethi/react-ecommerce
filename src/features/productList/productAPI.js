@@ -4,25 +4,38 @@ export function fetchAllProducts() {
     //TODO: we will not hardcode server url here
     const response = await fetch("http://localhost:8080/products");
     const data = await response.json();
-    
+
     resolve({ data });
   });
 }
 
-export function fetchProductsByFilters(filter) {
- 
+export function fetchProductsByFilters(filter, sort, pagination) {
   let queryString = "";
   for (let key in filter) {
-    queryString += `${key}=${filter[key]}&`;
+    const categoryValues = filter[key];
+    console.log(categoryValues);
+    if (categoryValues.length) {
+      const lastCategoryValue = categoryValues[categoryValues.length - 1];
+      console.log(lastCategoryValue);
+      queryString += `${key}=${lastCategoryValue}&`;
+    }
   }
-  
+  for (let key in sort) {
+    queryString += `${key}=${sort[key]}&`;
+  }
+  for (let key in pagination) {
+    queryString += `${key}=${pagination[key]}&`;
+    console.log(queryString);
+  }
+
   return new Promise(async (resolve) => {
     const response = await fetch(
-      "http://localhost:8080/products?"+queryString
+      "http://localhost:8080/products?" + queryString
     );
-  
-    const data = await response.json();
-    resolve({ data });
- 
+    console.log(response)
+
+    const info = await (response.json());
+    console.log(info.data);
+    resolve(info.data);
   });
 }
