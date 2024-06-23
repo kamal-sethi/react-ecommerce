@@ -9,14 +9,25 @@ export function fetchAllProducts() {
   });
 }
 
+export function fetchProductById(id) {
+  return new Promise(async (resolve) => {
+    //TODO: we will not hardcode server url here
+    const response = await fetch("http://localhost:8080/products/" + id);
+
+    const data = await response.json();
+
+    resolve({ data });
+  });
+}
+
 export function fetchProductsByFilters(filter, sort, pagination) {
   let queryString = "";
   for (let key in filter) {
     const categoryValues = filter[key];
-    console.log(categoryValues);
+
     if (categoryValues.length) {
       const lastCategoryValue = categoryValues[categoryValues.length - 1];
-      console.log(lastCategoryValue);
+
       queryString += `${key}=${lastCategoryValue}&`;
     }
   }
@@ -25,17 +36,15 @@ export function fetchProductsByFilters(filter, sort, pagination) {
   }
   for (let key in pagination) {
     queryString += `${key}=${pagination[key]}&`;
-    console.log(queryString);
   }
 
   return new Promise(async (resolve) => {
     const response = await fetch(
       "http://localhost:8080/products?" + queryString
     );
-    console.log(response)
 
-    const info = await (response.json());
-    console.log(info.data);
+    const info = await response.json();
+
     resolve(info.data);
   });
 }
