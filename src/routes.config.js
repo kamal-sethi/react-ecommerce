@@ -40,6 +40,10 @@ export const routes = [
   },
   {
     path: "/product-details/:id",
-    element: <ProductDetailPage></ProductDetailPage>,
+    element: (
+      <Protected>
+        <ProductDetailPage></ProductDetailPage>
+      </Protected>
+    ),
   },
 ];
