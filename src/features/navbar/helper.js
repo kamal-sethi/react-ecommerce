@@ -9,8 +9,8 @@ export const user = {
     { name: "Team", href: "#", current: false },
   ];
  export  const userNavigation = [
-    { name: "Your Profile", href: "#" },
-    { name: "Settings", href: "#" },
-    { name: "Sign out", href: "#" },
+    { name: "Your Profile", link: "/" },
+    { name: "Settings", link: "/" },
+    { name: "Sign out", link: "/login" },
   ];
   
