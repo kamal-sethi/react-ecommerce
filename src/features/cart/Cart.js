@@ -13,6 +13,7 @@ import { XMarkIcon, StarIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { selectLoggedInUser } from "../auth/authSlice";
 import { fetchAllProductByIdAsync } from "../productList/productSlice";
+import { Navigate } from "react-router-dom";
 // import { productsInCart } from "./cartSlice";
 
 export default function Cart() {
@@ -34,6 +35,7 @@ export default function Cart() {
   };
   return (
     <>
+      {/* {!products.length && <Navigate to="/"></Navigate>} */}
       <div className="mx-auto mt-24  bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold tracking-tight py-5 text-gray-900">
           Cart

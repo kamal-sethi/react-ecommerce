@@ -47,7 +47,7 @@ export default function Login() {
             onSubmit={handleSubmit((data) => {
               console.log(data);
               dispatch(
-                checkUserAsync({ email: data.email, password: data.password })
+                checkUserAsync({ email: data.email, password: data.password,addresses:[] })
               );
             })}
           >
