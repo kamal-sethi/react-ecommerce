@@ -21,7 +21,8 @@ export function checkUser(loginInfo) {
     const data = await response.json();
     console.log({ data });
     if (data.length) {
-      if (password === data[1].password) {  
+      if (password === data[1].password) {    
+        console.log(data[1].password);
         resolve({ data: data[1]});
       } else {
         reject({ message: "wrong credentials" });
@@ -35,6 +36,7 @@ export function checkUser(loginInfo) {
 
 export function updateUserAddress(update) {
   return new Promise(async (resolve) => {
+    console.log(update)
     const response = await fetch("http://localhost:8080/users/"+update.id, {
       method: "PATCH",
       body: JSON.stringify(update),

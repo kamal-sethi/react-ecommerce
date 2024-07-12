@@ -1808,20 +1808,11 @@
         {
           "name": "kamal sethi",
           "email": "kamalsethi018@gmail.com",
-          "mobileNo": "9882666001",
-          "street": "11th main",
-          "city": "khandoli",
-          "state": "gujarat",
-          "pinCode": "190901"
-        },
-        {
-          "name": "kamal sethi",
-          "email": "test@gmail.com",
-          "mobileNo": "909011001",
-          "street": "12th main",
-          "city": "banglore",
-          "state": "gujarat",
-          "pinCode": "190900"
+          "mobileNo": "5280795250",
+          "street": "kkmlm",
+          "city": "rajpiura",
+          "state": "punjab",
+          "pinCode": "140401"
         }
       ],
       "password": "Dontmesswithme@12345"
@@ -1829,71 +1820,213 @@
     {
       "id": "a9be",
       "email": "test@gmail.com",
+      "addresses": [
+        {
+          "name": "test",
+          "email": "test@gmail.com",
+          "mobileNo": "090108019191",
+          "street": "khnaour",
+          "city": "kank",
+          "state": "pn",
+          "pinCode": "190901"
+        }
+      ],
       "password": "Test@123"
     }
   ],
-  "cart": [
+  "cart": [],
+  "orders": [
     {
-      "id": "2",
-      "title": "Eyeshadow Palette with Mirror",
-      "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
-      "category": "beauty",
-      "price": 19.99,
-      "discountPercentage": 5.5,
-      "rating": 3.28,
-      "stock": 44,
-      "tags": [
-        "beauty",
-        "eyeshadow"
-      ],
-      "brand": "Glamour Beauty",
-      "sku": "MVCFH27F",
-      "weight": 3,
-      "dimensions": {
-        "width": 12.42,
-        "height": 8.63,
-        "depth": 29.13
-      },
-      "warrantyInformation": "1 year warranty",
-      "shippingInformation": "Ships in 2 weeks",
-      "availabilityStatus": "In Stock",
-      "reviews": [
+      "id": "1",
+      "products": [
         {
-          "rating": 4,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Liam Garcia",
-          "reviewerEmail": "liam.garcia@x.dummyjson.com"
-        },
-        {
-          "rating": 1,
-          "comment": "Very disappointed!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Nora Russell",
-          "reviewerEmail": "nora.russell@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Highly impressed!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Elena Baker",
-          "reviewerEmail": "elena.baker@x.dummyjson.com"
+          "id": "2",
+          "title": "Eyeshadow Palette with Mirror",
+          "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+          "category": "beauty",
+          "price": 19.99,
+          "discountPercentage": 5.5,
+          "rating": 3.28,
+          "stock": 44,
+          "tags": [
+            "beauty",
+            "eyeshadow"
+          ],
+          "brand": "Glamour Beauty",
+          "sku": "MVCFH27F",
+          "weight": 3,
+          "dimensions": {
+            "width": 12.42,
+            "height": 8.63,
+            "depth": 29.13
+          },
+          "warrantyInformation": "1 year warranty",
+          "shippingInformation": "Ships in 2 weeks",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Liam Garcia",
+              "reviewerEmail": "liam.garcia@x.dummyjson.com"
+            },
+            {
+              "rating": 1,
+              "comment": "Very disappointed!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Nora Russell",
+              "reviewerEmail": "nora.russell@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly impressed!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Elena Baker",
+              "reviewerEmail": "elena.baker@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 32,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.618Z",
+            "updatedAt": "2024-05-23T08:56:21.618Z",
+            "barcode": "2817839095220",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png",
+          "quantity": 1,
+          "user": "a00b"
         }
       ],
-      "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 32,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.618Z",
-        "updatedAt": "2024-05-23T08:56:21.618Z",
-        "barcode": "2817839095220",
-        "qrCode": "https://dummyjson.com/public/qr-code.png"
+      "totalItems": 1,
+      "totalPrice": 19.99,
+      "user": {
+        "id": "a00b",
+        "email": "kamalsethi018@gmail.com",
+        "addresses": [
+          {
+            "name": "kamal sethi",
+            "email": "kamalsethi018@gmail.com",
+            "mobileNo": "5280795250",
+            "street": "kkmlm",
+            "city": "rajpiura",
+            "state": "punjab",
+            "pinCode": "140401"
+          }
+        ],
+        "password": "Dontmesswithme@12345"
       },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png"
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "kamal sethi",
+        "email": "kamalsethi018@gmail.com",
+        "mobileNo": "5280795250",
+        "street": "kkmlm",
+        "city": "rajpiura",
+        "state": "punjab",
+        "pinCode": "140401"
+      },
+      "status": "Pending"
+    },
+    {
+      "id": "2",
+      "products": [
+        {
+          "id": "2",
+          "title": "Eyeshadow Palette with Mirror",
+          "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+          "category": "beauty",
+          "price": 19.99,
+          "discountPercentage": 5.5,
+          "rating": 3.28,
+          "stock": 44,
+          "tags": [
+            "beauty",
+            "eyeshadow"
+          ],
+          "brand": "Glamour Beauty",
+          "sku": "MVCFH27F",
+          "weight": 3,
+          "dimensions": {
+            "width": 12.42,
+            "height": 8.63,
+            "depth": 29.13
+          },
+          "warrantyInformation": "1 year warranty",
+          "shippingInformation": "Ships in 2 weeks",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Very satisfied!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Liam Garcia",
+              "reviewerEmail": "liam.garcia@x.dummyjson.com"
+            },
+            {
+              "rating": 1,
+              "comment": "Very disappointed!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Nora Russell",
+              "reviewerEmail": "nora.russell@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly impressed!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Elena Baker",
+              "reviewerEmail": "elena.baker@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "30 days return policy",
+          "minimumOrderQuantity": 32,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.618Z",
+            "updatedAt": "2024-05-23T08:56:21.618Z",
+            "barcode": "2817839095220",
+            "qrCode": "https://dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png",
+          "quantity": 1,
+          "user": "a9be"
+        }
       ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/thumbnail.png",
-      "quantity": 1,
-      "user": "a00b"
+      "totalItems": 1,
+      "totalPrice": 19.99,
+      "user": {
+        "id": "a9be",
+        "email": "test@gmail.com",
+        "addresses": [
+          {
+            "name": "test",
+            "email": "test@gmail.com",
+            "mobileNo": "090108019191",
+            "street": "khnaour",
+            "city": "kank",
+            "state": "pn",
+            "pinCode": "190901"
+          }
+        ],
+        "password": "Test@123"
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "test",
+        "email": "test@gmail.com",
+        "mobileNo": "090108019191",
+        "street": "khnaour",
+        "city": "kank",
+        "state": "pn",
+        "pinCode": "190901"
+      },
+      "status": "pending"
     }
   ]
 }

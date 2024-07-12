@@ -53,8 +53,8 @@ export default function ProductDetail() {
 
   const handleCart=(e)=>{
     e.preventDefault();
-    console.log('clicked');
-    toast.success('item added to cart successfully')
+    // console.log('clicked');
+    // toast.success('item added to cart successfully')
     dispatch(addToCartAsync({...product,quantity:1,user:user.id}));
 
   }

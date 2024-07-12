@@ -18,8 +18,10 @@ export const createUserAsync = createAsyncThunk(
 export const updateUserAddressAsync = createAsyncThunk(
   "user/updateUserAddress",
   async (update) => {
+    console.log(update);
     const response = await updateUserAddress(update);
     // The value we return becomes the `fulfilled` action payload
+    console.log(response)
     return response.data;
   }
 );

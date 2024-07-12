@@ -7,7 +7,6 @@ import {
   selectCount,
   selectLoggedInUser,
 } from "../authSlice";
-import { ToastContainer, toast } from "react-toastify";
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { selectError } from "../authSlice";

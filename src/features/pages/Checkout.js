@@ -11,9 +11,11 @@ import {
 import { useForm } from "react-hook-form";
 import { selectLoggedInUser, updateUserAddressAsync } from "../auth/authSlice";
 import { updateUserAddress } from "../auth/authAPI";
+import { createOrderAsync, selectCurrentOrder } from "../order/orderSlice";
 
 const Checkout = () => {
   const products = useSelector(productsInCart);
+  const currentOrder = useSelector(selectCurrentOrder);
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
   const [selectedAddress, setSelectedAddress] = useState(null);
@@ -33,13 +35,23 @@ const Checkout = () => {
     dispatch(deleteItemFromCartAsync(id));
   };
   const handlePayments = (e) => {
-    console.log(e.target.value);
     setPaymentMethod(e.target.value);
-    // console.log(paymentMethod);
   };
   const handleAddress = (e, index) => {
     setSelectedAddress(user.addresses[e.target.value]);
-    console.log(selectedAddress);
+  };
+  const handleOrder = (e) => {
+    const order = {
+      products,
+      totalItems,
+      totalPrice,
+      user,
+      paymentMethod,
+      selectedAddress,
+      status: "pending", //can be changed by admin
+    };
+    dispatch(createOrderAsync(order));
+    // <Navigate to="/order-success"></Navigate>;
   };
   const totalPrice = products.reduce(
     (amount, item) => item.quantity * item.price + amount,
@@ -49,6 +61,7 @@ const Checkout = () => {
   return (
     <>
       {!products.length && <Navigate to="/"></Navigate>}
+      {currentOrder && <Navigate to={`/order-success/${currentOrder.id}`}></Navigate>}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
@@ -57,6 +70,7 @@ const Checkout = () => {
               noValidate
               onSubmit={handleSubmit((data) => {
                 console.log(data);
+                console.log(user);
                 dispatch(
                   updateUserAddressAsync({
                     ...user,
@@ -236,7 +250,7 @@ const Checkout = () => {
                 </p>
 
                 <ul role="list">
-                  {user.addresses.map((address, index) => (
+                  {user?.addresses?.map((address, index) => (
                     <li
                       key={index}
                       className="flex justify-between gap-x-6 px-5 py-5 border-gray-200 border-solid border-2"
@@ -398,10 +412,10 @@ const Checkout = () => {
                 </p>
                 <div className="mt-6">
                   <div
-                    // onClick={handleOrder}
-                    className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    onClick={handleOrder}
+                    className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >
-                    Pay and order
+                    Order Now
                   </div>
                 </div>
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">

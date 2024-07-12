@@ -5,6 +5,10 @@ import Checkout from "./features/pages/Checkout";
 import ProductDetailPage from "./features/pages/ProductDetailPage";
 import Home from "./features/pages/Home";
 import Protected from "./features/auth/components/Protected";
+import PageNotFound from "./features/pages/404";
+import OrderSuccessPage from "./features/pages/OrderSuccess";
+import UserOrders from "./features/user/Components/UserOrders";
+import UserOrdersPage from "./features/pages/UserOrdersPage";
 export const routes = [
   {
     path: "/login",
@@ -44,6 +48,24 @@ export const routes = [
       <Protected>
         <ProductDetailPage></ProductDetailPage>
       </Protected>
+    ),
+  },
+  {
+    path: "order-success/:id",
+    element: (
+      <OrderSuccessPage></OrderSuccessPage>
+    ),
+  },
+  {
+    path: "/orders",
+    element: (
+      <UserOrdersPage></UserOrdersPage>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <PageNotFound></PageNotFound>
     ),
   },
 ];

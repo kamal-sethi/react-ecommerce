@@ -17,7 +17,7 @@ function classNames(...classes) {
 }
 
 const Navbar = ({ children }) => {
-  const items=useSelector(productsInCart)
+  const items = useSelector(productsInCart);
   return (
     <div>
       <div className="min-h-full">
@@ -72,7 +72,7 @@ const Navbar = ({ children }) => {
                         </button>
                       </Link>
                       <span className="inline-flex items-center rounded-md mb-8 -ml-2 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                        {items.length>0?items.length:""}
+                        {items.length > 0 ? items.length : ""}
                       </span>
 
                       {/* Profile dropdown */}
@@ -210,13 +210,7 @@ const Navbar = ({ children }) => {
           )}
         </Disclosure>
 
-        <header className="bg-white shadow">
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 ">
-              My Store <ShoppingCartIcon className="h-6 w-6 inline" />
-            </h1>
-          </div>
-        </header>
+        <header className="bg-white shadow"></header>
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             {children}
