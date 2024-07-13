@@ -2,16 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../../auth/authSlice";
 import { fetchLoggedInUserOrders } from "../userAPI";
-import { fetchLoggedInUserOrdersAsync, selectOrders } from "../userSlice";
+import { fetchLoggedInUserOrdersAsync, selectOrders, selectUserInfo } from "../userSlice";
 import { StarIcon } from "@heroicons/react/24/outline";
 
 const UserOrders = () => {
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
   const orders = useSelector(selectOrders);
-  console.log(user);
-  console.log(orders);
-  console.log(orders.id);
   useEffect(() => {
     dispatch(fetchLoggedInUserOrdersAsync(user.id));
   }, []);
@@ -94,7 +91,9 @@ const UserOrders = () => {
                   <p class="text-sm leading-6 text-gray-900">
                     phone: {order.selectedAddress.mobileNo}
                   </p>
-                  <p class="text-sm leading-6 text-gray-900">{order.selectedAddress.city}</p>
+                  <p class="text-sm leading-6 text-gray-900">
+                    {order.selectedAddress.city}
+                  </p>
                 </div>
               </div>
             </div>

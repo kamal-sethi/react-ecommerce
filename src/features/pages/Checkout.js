@@ -69,8 +69,6 @@ const Checkout = () => {
               className="bg-white px-5 py-12 mt-12 my-10"
               noValidate
               onSubmit={handleSubmit((data) => {
-                console.log(data);
-                console.log(user);
                 dispatch(
                   updateUserAddressAsync({
                     ...user,

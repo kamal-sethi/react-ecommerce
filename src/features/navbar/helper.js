@@ -9,7 +9,7 @@ export const user = {
     { name: "Team", href: "#", current: false },
   ];
  export  const userNavigation = [
-    { name: "Your Profile", link: "/" },
+    { name: "My Profile", link: "/profile" },
     { name: "My Orders", link: "/orders" },
     { name: "Sign out", link: "/login" },
   ];

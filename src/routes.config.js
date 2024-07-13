@@ -9,6 +9,8 @@ import PageNotFound from "./features/pages/404";
 import OrderSuccessPage from "./features/pages/OrderSuccess";
 import UserOrders from "./features/user/Components/UserOrders";
 import UserOrdersPage from "./features/pages/UserOrdersPage";
+import UserProfile from "./features/user/Components/UserProfile";
+import UserProfilePage from "./features/pages/UserProfilePage";
 export const routes = [
   {
     path: "/login",
@@ -60,6 +62,12 @@ export const routes = [
     path: "/orders",
     element: (
       <UserOrdersPage></UserOrdersPage>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <UserProfilePage></UserProfilePage>
     ),
   },
   {
