@@ -11,6 +11,8 @@ import UserOrders from "./features/user/Components/UserOrders";
 import UserOrdersPage from "./features/pages/UserOrdersPage";
 import UserProfile from "./features/user/Components/UserProfile";
 import UserProfilePage from "./features/pages/UserProfilePage";
+import Logout from "./features/auth/components/Logout";
+import ForgotPasswordPage from "./features/pages/ForgotPasswordPage";
 export const routes = [
   {
     path: "/login",
@@ -54,26 +56,26 @@ export const routes = [
   },
   {
     path: "order-success/:id",
-    element: (
-      <OrderSuccessPage></OrderSuccessPage>
-    ),
+    element: <OrderSuccessPage></OrderSuccessPage>,
   },
   {
     path: "/orders",
-    element: (
-      <UserOrdersPage></UserOrdersPage>
-    ),
+    element: <UserOrdersPage></UserOrdersPage>,
   },
   {
     path: "/profile",
-    element: (
-      <UserProfilePage></UserProfilePage>
-    ),
+    element: <UserProfilePage></UserProfilePage>,
+  },
+  {
+    path: "/logout",
+    element: <Logout></Logout>,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPasswordPage></ForgotPasswordPage>,
   },
   {
     path: "*",
-    element: (
-      <PageNotFound></PageNotFound>
-    ),
+    element: <PageNotFound></PageNotFound>,
   },
 ];

@@ -11,6 +11,11 @@ export function createUser(userData) {
     resolve({ data });
   });
 }
+export function signOut(userId) {
+  return new Promise(async (resolve) => {
+    resolve({ data: "success" });
+  });
+}
 
 export function checkUser(loginInfo) {
   return new Promise(async (resolve, reject) => {
@@ -21,9 +26,9 @@ export function checkUser(loginInfo) {
     const data = await response.json();
     console.log({ data });
     if (data.length) {
-      if (password === data[1].password) {    
+      if (password === data[1].password) {
         console.log(data[1].password);
-        resolve({ data: data[1]});
+        resolve({ data: data[1] });
       } else {
         reject({ message: "wrong credentials" });
       }
@@ -32,6 +37,3 @@ export function checkUser(loginInfo) {
     }
   });
 }
-
-
-
