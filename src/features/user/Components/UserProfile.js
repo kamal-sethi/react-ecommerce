@@ -61,6 +61,11 @@ const UserProfile = () => {
         <h4 className="text-xl font-medium tracking-tight py-5 text-red-900">
           Email Address:{user.email}
         </h4>
+        {user.role === "admin" && (
+          <h4 className="text-xl font-medium tracking-tight py-5 text-red-900">
+            role:{user.role}
+          </h4>
+        )}
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <div className="flow-root"></div>
         </div>

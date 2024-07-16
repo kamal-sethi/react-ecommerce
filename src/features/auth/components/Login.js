@@ -41,8 +41,6 @@ export default function Login() {
           <form
             noValidate
             className="space-y-6"
-            action="#"
-            method="POST"
             onSubmit={handleSubmit((data) => {
               console.log(data);
               dispatch(

@@ -13,6 +13,10 @@ import UserProfile from "./features/user/Components/UserProfile";
 import UserProfilePage from "./features/pages/UserProfilePage";
 import Logout from "./features/auth/components/Logout";
 import ForgotPasswordPage from "./features/pages/ForgotPasswordPage";
+import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
+import AdminHome from "./features/pages/AdminHome";
+import AdminProductDetailPage from "./features/pages/AdminProductDetailPage";
+import AdminProductFormPage from "./features/pages/AdminProductFormPage";
 export const routes = [
   {
     path: "/login",
@@ -24,6 +28,14 @@ export const routes = [
       <Protected>
         <Home></Home>
       </Protected>
+    ),
+  },
+  {
+    path: "/admin",
+    element: (
+      <ProtectedAdmin>
+        <AdminHome></AdminHome>
+      </ProtectedAdmin>
     ),
   },
   {
@@ -54,6 +66,31 @@ export const routes = [
       </Protected>
     ),
   },
+  {
+    path: "/admin/product-details/:id",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductDetailPage></AdminProductDetailPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: "/admin/product-form",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: "/admin/product-form/edit/:id",
+    element: (
+      <ProtectedAdmin>
+        <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
+  },
+
   {
     path: "order-success/:id",
     element: <OrderSuccessPage></OrderSuccessPage>,

@@ -21,7 +21,6 @@ export const filters = [
       { value: "fragrances", label: "fragrances", checked: false },
       { value: "furniture", label: "furniture", checked: false },
       { value: "groceries", label: "groceries", checked: false },
-      { value: "Mobile", label: "Mobile", checked: false },
     ],
   },
 ];
