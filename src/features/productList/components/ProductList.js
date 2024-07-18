@@ -14,11 +14,13 @@ import {
   MinusIcon,
   PlusIcon,
   Squares2X2Icon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { sortOptions, subCategories, filters } from "./Helpers";
 import Pagination from "./Pagination";
-import { ITEMS_PER_PAGE } from "../../../app/constants";
+import { discountedPrice, ITEMS_PER_PAGE } from "../../../app/constants";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -31,6 +33,7 @@ export default function ProductList() {
   const [sort, setSort] = useState({});
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [page, setPage] = useState(1);
+  const totalItems = products.length;
   const handleFilter = (e, section, option) => {
     console.log(e.target.checked);
     const newFilter = { ...filter };
@@ -52,7 +55,7 @@ export default function ProductList() {
     setSort(newSort);
   };
 
-  const handlePagination = (page) => {
+  const handlePage = (page) => {
     console.log(page);
     setPage(page);
   };
@@ -61,6 +64,9 @@ export default function ProductList() {
     dispatch(fetchAllProductsByFilterAsync({ filter, sort, pagination }));
   }, [dispatch, filter, sort, page]);
 
+  useEffect(() => {
+    setPage(1);
+  }, [totalItems, sort]);
   return (
     <div>
       <div className="bg-white">
@@ -158,7 +164,7 @@ export default function ProductList() {
             </section>
 
             <Pagination
-              handlePagination={handlePagination}
+              handlePage={handlePage}
               page={page}
               setPage={setPage}
               totalItems={30}
@@ -381,10 +387,7 @@ function ProductGrid({ products }) {
                   </div>
                   <div>
                     <p className="text-sm block font-medium text-gray-900">
-                      $
-                      {Math.round(
-                        product.price * (1 - product.discountPercentage / 100)
-                      )}
+                      ${discountedPrice(product)}
                     </p>
                     <p className="text-sm block line-through font-medium text-gray-400">
                       ${product.price}

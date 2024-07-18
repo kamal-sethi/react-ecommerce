@@ -17,6 +17,7 @@ import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
 import AdminHome from "./features/pages/AdminHome";
 import AdminProductDetailPage from "./features/pages/AdminProductDetailPage";
 import AdminProductFormPage from "./features/pages/AdminProductFormPage";
+import AdminOrdersPage from "./features/pages/AdminOrdersPage";
 export const routes = [
   {
     path: "/login",
@@ -79,6 +80,14 @@ export const routes = [
     element: (
       <ProtectedAdmin>
         <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: "/admin/orders",
+    element: (
+      <ProtectedAdmin>
+        <AdminOrdersPage></AdminOrdersPage>
       </ProtectedAdmin>
     ),
   },

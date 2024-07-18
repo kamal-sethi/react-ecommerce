@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { selectLoggedInUser, updateUserAddressAsync } from "../auth/authSlice";
 import { updateUserAddress } from "../auth/authAPI";
 import { createOrderAsync, selectCurrentOrder } from "../order/orderSlice";
+import { discountedPrice } from "../../app/constants";
 
 const Checkout = () => {
   const products = useSelector(productsInCart);
@@ -54,14 +55,16 @@ const Checkout = () => {
     // <Navigate to="/order-success"></Navigate>;
   };
   const totalPrice = products.reduce(
-    (amount, item) => item.quantity * item.price + amount,
+    (amount, item) => discountedPrice(item) * item.price + amount,
     0
   );
   const totalItems = products.reduce((total, item) => item.quantity + total, 0);
   return (
     <>
       {!products.length && <Navigate to="/"></Navigate>}
-      {currentOrder && <Navigate to={`/order-success/${currentOrder.id}`}></Navigate>}
+      {currentOrder && (
+        <Navigate to={`/order-success/${currentOrder.id}`}></Navigate>
+      )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
@@ -357,7 +360,9 @@ const Checkout = () => {
                               <h3>
                                 <a href={product.href}>{product.title}</a>
                               </h3>
-                              <p className="ml-4">${product.price}</p>
+                              <p className="ml-4">
+                                ${discountedPrice(product)}
+                              </p>
                             </div>
                             <p className="mt-1 text-sm text-gray-500">
                               {product.color}

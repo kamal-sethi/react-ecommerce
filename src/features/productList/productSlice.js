@@ -11,6 +11,7 @@ const initialState = {
   products: [],
   status: "idle",
   selectedProduct: null,
+  totalProducts: 0,
 };
 
 export const fetchAllProductsAsync = createAsyncThunk(
@@ -70,6 +71,9 @@ export const productSlice = createSlice({
     clearSelectedProduct: (state) => {
       state.selectedProduct = null;
     },
+    // selectTotalProducts: (state) => {
+    //   state.totalProducts = state.products.length;
+    // },
   },
 
   extraReducers: (builder) => {
@@ -115,11 +119,14 @@ export const productSlice = createSlice({
   },
 });
 
-export const { clearSelectedProduct } = productSlice.actions;
+export const { clearSelectedProduct, selectTotalProducts } =
+  productSlice.actions;
 
 //selecting all products
 export const selectAllProducts = (state) => state.product.products;
 
 export const selectProductById = (state) => state.product.selectedProduct;
+
+// export const selectTotalProducts = (state) => state.product.totalProducts;
 
 export default productSlice.reducer;

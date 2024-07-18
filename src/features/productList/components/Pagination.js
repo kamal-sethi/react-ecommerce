@@ -1,7 +1,7 @@
 import React from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { ITEMS_PER_PAGE } from "../../../app/constants";
-const Pagination = ({ handlePagination, page, setPage, totalItems }) => {
+const Pagination = ({ handlePage, page, setPage, totalItems }) => {
   return (
     <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
@@ -50,7 +50,7 @@ const Pagination = ({ handlePagination, page, setPage, totalItems }) => {
             {Array.from({ length: Math.ceil(totalItems / ITEMS_PER_PAGE) }).map(
               (el, index) => (
                 <div
-                  onClick={(e) => handlePagination(index + 1)}
+                  onClick={(e) => handlePage(index + 1)}
                   aria-current="page"
                   className={`relative cursor-pointer z-10 inline-flex items-center ${
                     index + 1 === page

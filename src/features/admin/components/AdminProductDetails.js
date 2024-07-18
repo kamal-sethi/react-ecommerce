@@ -2,12 +2,17 @@ import { useState, useEffect } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllProductByIdAsync, selectProductById } from "../../productList/productSlice";
+import {
+  fetchAllProductByIdAsync,
+  selectProductById,
+} from "../../productList/productSlice";
 import { useParams } from "react-router-dom";
 import { addToCartAsync } from "../../cart/cartSlice";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
 import { selectLoggedInUser } from "../../auth/authSlice";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
+// import { DisclosurePanel } from "@headlessui/react";
+import { discountedPrice } from "../../../app/constants";
 // TODO: In server data we will add colors, sizes , highlights. to each product
 
 const colors = [
@@ -45,19 +50,18 @@ export default function AdminProductDetails() {
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams();
-  const user=useSelector(selectLoggedInUser)
+  const user = useSelector(selectLoggedInUser);
 
   useEffect(() => {
     dispatch(fetchAllProductByIdAsync(params.id));
   }, [dispatch, params.id]);
 
-  const handleCart=(e)=>{
+  const handleCart = (e) => {
     e.preventDefault();
     // console.log('clicked');
     // toast.success('item added to cart successfully')
-    dispatch(addToCartAsync({...product,quantity:1,user:user.id}));
-
-  }
+    dispatch(addToCartAsync({ ...product, quantity: 1, user: user.id }));
+  };
   return (
     <div className="bg-white">
       {product && (
@@ -147,8 +151,11 @@ export default function AdminProductDetails() {
             {/* Options */}
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
-              <p className="text-3xl tracking-tight text-gray-900">
+              <p className="text-3xl line-through tracking-tight text-gray-900">
                 ${product.price}
+              </p>
+              <p className="text-3xl line-through tracking-tight text-gray-900">
+                ${discountedPrice(product)}
               </p>
 
               {/* Reviews */}

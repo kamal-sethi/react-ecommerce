@@ -4,6 +4,7 @@ import {
   fetchAllProductsAsync,
   fetchAllProductsByFilterAsync,
   selectAllProducts,
+  selectTotalProducts,
 } from "../../productList/productSlice";
 
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
@@ -18,7 +19,7 @@ import {
 import { Link } from "react-router-dom";
 import { sortOptions, subCategories, filters } from "./Helpers";
 import Pagination from "./Pagination";
-import { ITEMS_PER_PAGE } from "../../../app/constants";
+import { ITEMS_PER_PAGE, discountedPrice } from "../../../app/constants";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -27,6 +28,9 @@ function classNames(...classes) {
 export default function AdminProductList() {
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
+  // const totalItem=useSelector(selectTotalProducts)
+  // console.log(totalItem);
+  console.log(products.length);
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState({});
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -389,10 +393,7 @@ function ProductGrid({ products }) {
                   </div>
                   <div>
                     <p className="text-sm block font-medium text-gray-900">
-                      $
-                      {Math.round(
-                        product.price * (1 - product.discountPercentage / 100)
-                      )}
+                      ${discountedPrice(product)}
                     </p>
                     <p className="text-sm block line-through font-medium text-gray-400">
                       ${product.price}
@@ -400,9 +401,11 @@ function ProductGrid({ products }) {
                   </div>
                 </div>
               </div>
-              {product.deleted && <div>
-                <p className="text-red-700 font-medium">Product Deleted</p>
-              </div>}
+              {product.deleted && (
+                <div>
+                  <p className="text-red-700 font-medium">Product Deleted</p>
+                </div>
+              )}
               <div className="mt-4">
                 <Link
                   to={`/admin/product-form/edit/${product.id}`}
